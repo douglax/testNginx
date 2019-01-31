@@ -15,7 +15,7 @@ pipeline{
 				}
 			}
 		}
-	stage('Create container'){
+	    stage('Create container'){
 			steps{
 				sh 'docker run -i -t -d --name=webtest sotolito/testnginx /bin/bash'
 			}
@@ -25,7 +25,7 @@ pipeline{
 				}
 			}
 		}
-	stage('Test webserver'){
+	    stage('Test webserver'){
 			steps{
 				script{
                     env.CONTAINERIP = docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
@@ -39,7 +39,7 @@ pipeline{
 				}
 			}
 		}
-	stage('Destroy infra'){
+	    stage('Destroy infra'){
 			steps{
 				sh 'docker stop webtest'
                 sh 'docker rm webtest'
