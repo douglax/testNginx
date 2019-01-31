@@ -51,48 +51,6 @@ pipeline{
 				}
 			}
 		}
-/*		stage('Connectivity Check'){
-			steps{
-				sh 'ping -i 1 -t 1 -c 3 moximo.rocks'
-			}
-			post{
-				success{
-					echo 'Ping Successful'
-				}
-			}
-		}
-		stage('Website Check'){
-			steps{
-				sh 'ab -t 1 -s 1  -c 10 -n 10 http://moximo.rock/'
-			}
-			post{
-				success{
-					echo 'Website check successful'
-				}
-			}
-		}
-		stage('Deploying infrastructure'){
-			steps{
-				sh 'whoareyoubitch'
-			}
-			post{
-				success{
-					echo 'infra deployed Successful'
-				}
-			}
-		}		
-		stage('Deploying App'){
-			steps{
-				sh 'id'
-			}
-			post{
-				success{
-					echo 'App deployed successfully'
-				}
-			}
-		}
-
-*/
 	}
 	post{
 		always{
