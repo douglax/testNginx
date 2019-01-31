@@ -1,0 +1,14 @@
+before_script:
+  - echo "Before script"
+
+build_image:
+  script:
+    - docker build -t sotolito/testnginx .
+
+create_container:
+  script:
+    - docker run -i -t -d --name=webtest sotolito/testnginx /bin/bash
+
+create_container:
+  script:
+    - docker run -i -t -d --name=webtest sotolito/testnginx /bin/bash
